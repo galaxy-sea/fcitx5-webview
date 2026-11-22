@@ -194,8 +194,6 @@ class WebviewCandidateWindow {
     int accent_color_ = 4;
     std::string app_accent_color_ = "";
     AppAppearance app_appearance_;
-    bool app_appearance_ready_ = false;
-    void set_app_appearance() const;
     layout_t layout_ = layout_t::horizontal;
     writing_mode_t writing_mode_ = writing_mode_t::horizontal_tb;
     formatted preeditPreCaret_;
