@@ -70,7 +70,10 @@ export function initTheme() {
   })
 }
 
-export function setTheme(theme: 0 | 1 | 2) {
+export function setTheme(
+  theme: 0 | 1 | 2,
+  ...appAppearance: Parameters<typeof setAppAppearance> | []
+) {
   switch (theme) {
     case 0:
       followSystemTheme = true
@@ -85,6 +88,9 @@ export function setTheme(theme: 0 | 1 | 2) {
       setDarkTheme()
       break
   }
+  if (appAppearance.length) {
+    setAppAppearance(...appAppearance)
+  }
 }
 
 function updateAppDark() {
@@ -94,7 +100,7 @@ function updateAppDark() {
   )
 }
 
-export function setAppAppearance(
+function setAppAppearance(
   appId: string,
   appearance: string,
   appThemeValue: 0 | 1 | 2,

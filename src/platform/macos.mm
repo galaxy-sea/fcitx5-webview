@@ -481,7 +481,9 @@ void WebviewCandidateWindow::set_theme(theme_t theme) const {
                                                     ? NSAppearanceNameDarkAqua
                                                     : NSAppearanceNameAqua];
     }
-    invoke_js("setTheme", theme);
+    invoke_js("setTheme", theme, app_appearance_.appId,
+              app_appearance_.appearance, app_appearance_.theme,
+              app_appearance_.vibrancy, app_appearance_.contrast);
 }
 
 void WebviewCandidateWindow::set_native_blur(blur_t value) const {
